@@ -1,6 +1,13 @@
 import streamlit as st
 from huggingface_hub import InferenceClient
 
+HF_API_KEY = st.secrets["HF_API_KEY"]
+
+client = InferenceClient(
+    model="mistralai/Mistral-7B-Instruct-v0.2",
+    token=HF_API_KEY
+)
+
 # Page config
 st.set_page_config(page_title="AI Travel Planner", page_icon="✈️")
 
